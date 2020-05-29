@@ -1,0 +1,290 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view_mistake"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rec_dialog"
+    android:layout_margin="8dp"
+    android:backgroundTint="@color/white_background"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dialog_margin_bottom"
+        android:layout_marginTop="@dimen/dialog_margin_top"
+        android:layout_marginLeft="@dimen/dialog_margin_left"
+        android:layout_marginRight="@dimen/dialog_margin_right"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Producto"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/title_dialog_helper"
+            android:textStyle="bold"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/rec_find"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Nombre "
+                android:textColor="@color/word"
+                android:paddingLeft="8dp"
+                android:textSize="@dimen/general_text"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+                />
+
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:background="@drawable/line_vertical"
+                />
+
+            <EditText
+                android:id="@+id/product_name"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:textColor="#5c5c5c"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:textSize="16sp"
+                android:fontFamily="@font/opensanssight"
+                android:hint=""
+
+                android:inputType="textCapWords" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:paddingTop="12dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rec_find"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="$ venta ( kg ) "
+                    android:paddingLeft="8dp"
+                    android:textColor="@color/word"
+                    android:textSize="@dimen/general_text"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    />
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/line_vertical"
+                    />
+
+                <EditText
+                    android:id="@+id/product_price"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    style="@style/Widget.Design.TextInputLayout"
+                    android:paddingLeft="8dp"
+                    android:fontFamily="@font/opensanssight"
+                    android:textColor="#5c5c5c"
+                    android:background="@null"
+                    android:inputType="numberDecimal"
+                    android:layout_height="35dp"
+                    android:textSize="15sp"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="35dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rec_find"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="$ venta ( 1/2kg ) "
+                    android:paddingLeft="8dp"
+                    android:textColor="@color/word"
+                    android:textSize="@dimen/general_text"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    />
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/line_vertical"
+                    />
+
+                <EditText
+                    android:id="@+id/half_price"
+                    android:inputType="numberDecimal"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    style="@style/Widget.Design.TextInputLayout"
+                    android:fontFamily="@font/opensanssight"
+                    android:paddingLeft="8dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    android:textColor="#5c5c5c"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="35dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rec_find"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="$ venta ( 1/4 kg ) "
+                    android:paddingLeft="8dp"
+                    android:textColor="@color/word"
+                    android:textSize="@dimen/general_text"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    />
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/line_vertical"
+                    />
+                <EditText
+                    android:id="@+id/cuarter_price"
+                    android:inputType="numberDecimal"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    style="@style/Widget.Design.TextInputLayout"
+                    android:fontFamily="@font/opensanssight"
+                    android:paddingLeft="8dp"
+                    android:textColor="#5c5c5c"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+
+                    android:background="@null"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="35dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rec_find"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Stock inicial (kg)"
+                    android:paddingLeft="8dp"
+                    android:textSize="@dimen/general_text"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/word"
+                    android:layout_gravity="center_vertical"
+                    />
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/line_vertical"
+                    />
+
+                <EditText
+                    android:id="@+id/product_stock"
+                    android:layout_height="35dp"
+                    android:paddingLeft="8dp"
+                    style="@style/Widget.Design.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:textColor="#5c5c5c"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/opensanssight"
+                    android:background="@drawable/rec_find"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:id="@+id/cancel"
+                android:layout_weight="1"
+                android:text="CANCELAR"
+                android:gravity="center"
+                android:textColor="@color/colorDialogButton"
+                android:textStyle="bold"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/ok"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:textColor="#ffff"
+                android:padding="4dp"
+                android:backgroundTint="@color/colorDialogButton"
+                android:background="@drawable/rec_dialog"
+                android:text="CREAR"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
+

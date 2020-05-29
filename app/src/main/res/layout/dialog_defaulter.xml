@@ -1,0 +1,123 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view_mistake"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rec_dialog"
+    android:backgroundTint="@color/white_background"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:id="@+id/title"
+            android:gravity="center"
+            android:text="Pago"
+            android:textColor="@color/FishyLetraDark"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="30dp"
+                android:inputType="textCapWords"
+                android:paddingLeft="8dp"
+                android:textColor="@color/FishyLetraDark"
+                android:text="¿Adeuda el pago?"
+                android:textSize="18sp"
+
+                />
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/debt_value"
+                android:layout_width="180dp"
+                android:layout_height="35dp"
+                android:background="@drawable/rec_find"
+                android:paddingLeft="8dp"
+                android:textColor="@color/word"
+                android:fontFamily="@font/opensanssight"
+                android:inputType="numberDecimal"
+                android:hint="$ valor deuda"
+                android:textSize="18sp"
+
+                />
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/cancel"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="SALDADO"
+                android:textColor="@color/colorDialogButton"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/ok"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/colorDialogButton"
+                android:background="@drawable/rec_dialog"
+                android:padding="4dp"
+                android:text="Guardar"
+                android:textColor="#ffff" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    </LinearLayout>
+
+
+<!--
+ <EditText
+                android:layout_marginTop="4dp"
+                android:layout_width="100dp"
+                style="@style/CodeFontInput"
+                android:hint="$"
+                android:id="@+id/amount"/>
+-->
+

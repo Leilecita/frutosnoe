@@ -1,0 +1,108 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view_mistake"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rec_dialog"
+    android:backgroundTint="@color/white_background"
+
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/line2"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="36dp"
+                android:id="@+id/user_name"
+                android:gravity="center"
+                android:textColor="@color/word"
+                android:textSize="18sp"
+                android:text="Leila del campo"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_items"
+            android:layout_below="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/word"
+            android:layout_below="@id/list_items"
+            android:text="$"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_toLeftOf="@+id/amount"
+           />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/word"
+            android:layout_alignParentRight="true"
+            android:text="900"
+            android:paddingRight="6dp"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_below="@+id/list_items"
+            android:id="@+id/amount"
+           />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:id="@+id/line1"
+            android:layout_below="@id/amount"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/cancel"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="EDITAR"
+                android:textColor="@color/colorDialogButton"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/ok"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/colorDialogButton"
+                android:background="@drawable/rec_dialog"
+                android:padding="4dp"
+                android:text="OK"
+                android:textColor="#ffff" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
+

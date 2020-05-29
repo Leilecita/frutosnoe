@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_margin="6dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardBackgroundColor="@color/color_background_cards"
+    card_view:cardMaxElevation="4dp"
+    card_view:cardElevation="2dp"
+    card_view:contentPadding="8dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:id="@+id/stateImage"
+            android:padding="2dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="4dp"
+            android:src="@drawable/pendient_dor"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:id="@+id/prepared"
+            android:layout_toLeftOf="@id/stateImage"
+            android:layout_margin="4dp"
+            android:src="@mipmap/pendient_to_prepare"/>
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+
+            android:visibility="gone"
+            android:id="@+id/money"
+            android:layout_toLeftOf="@id/debt_value"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/money_dor"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:id="@+id/debt_value"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:paddingTop="2dp"
+            android:gravity="center_vertical"
+            android:layout_toLeftOf="@id/prepared"
+            android:textSize="18sp"
+            android:text="190"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:id="@+id/line1"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Leila del campo"
+                android:padding="2dp"
+                android:fontFamily="@font/opensansregular"
+                android:textColor="@color/FishyLetraDark"
+                android:textSize="18sp" />
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:id="@+id/line2"
+            android:layout_below="@+id/line1"
+
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/user_address"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Aristobulo del valle 3020"
+                android:padding="2dp"
+                android:textColor="@color/FishyLetraDark"
+                android:textSize="@dimen/general_text" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:id="@+id/horario"
+                android:textColor="@color/FishyLetraDark"
+                android:text=""
+                android:layout_gravity="center_vertical"
+                android:textSize="15sp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/state2"
+            android:layout_below="@+id/line2"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:id="@+id/state"
+
+                android:textColor="@color/FishyLetra"
+                android:text=""
+                android:layout_gravity="center_vertical"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/FishyLetraDark"
+                android:text="$"
+                android:layout_gravity="center"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:paddingRight="6dp"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:id="@+id/amount_order"
+                android:textColor="@color/FishyLetraDark"
+                android:text="900"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:id="@+id/priority"
+                android:textColor="@color/FishyLetraDark"
+                android:layout_marginRight="5dp"
+                android:text=""
+                android:layout_gravity="center_vertical"
+                android:textSize="16sp"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/divisor"
+            style="@style/DivisorCategoryStyle"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/state2"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divisor"
+            android:paddingTop="4dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:layout_weight="1"
+                android:src="@mipmap/list_white" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/mens"
+                android:layout_height="25dp"
+                android:src="@mipmap/mens_white"
+                />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/phone"
+                android:layout_height="25dp"
+                android:src="@mipmap/phone_white"
+                />
+
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="25dp"
+                android:id="@+id/options"
+                android:src="@mipmap/send_white"
+
+                />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

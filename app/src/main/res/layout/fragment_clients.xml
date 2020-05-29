@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white_background"
+    android:layout_height="match_parent"
+    android:id="@+id/listado">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/line1"
+        >
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/rec_find"
+            android:layout_margin="8dp"
+            android:clickable="true"/>
+
+
+    </LinearLayout>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_users"
+        android:layout_below="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:background="@drawable/rec_find"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:padding="2dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/pendient_dor"
+                android:layout_gravity="center_vertical"
+                />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:layout_marginLeft="4dp"
+                android:id="@+id/pendients"
+                android:textSize="18sp"
+                android:textColor="@color/word"
+                android:text="0"
+
+                />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:padding="2dp"
+            android:id="@+id/line_debt"
+            android:visibility="gone"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/pendient_dor"
+                android:layout_gravity="center_vertical"
+                />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:layout_marginLeft="4dp"
+                android:id="@+id/total_debt"
+                android:textSize="@dimen/general_text"
+                android:textColor="@color/FishyRose"
+                android:text="0"
+
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

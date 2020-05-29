@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white_background"
+    android:layout_height="match_parent"
+    android:id="@+id/listado">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_products"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="40dp"
+
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_product"
+        android:layout_weight="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:src="@mipmap/add"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+
+        />
+</RelativeLayout>

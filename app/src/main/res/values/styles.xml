@@ -1,0 +1,101 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+        <item name="actionBarStyle">@style/MyActionBar</item>
+        <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
+    </style>
+
+    <!-- Title app-->
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.ActionBar.Solid">
+        <item name="titleTextStyle">@style/MyTitleTextStyle</item>
+    </style>
+
+    <style name="MyTitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/opensansregular</item>
+    </style>
+
+    <!-- Font app-->
+    <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/opensanssight</item>
+    </style>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="CodeFontCreate" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/word</item>
+        <item name="android:textSize">@dimen/general_text</item>
+        <item name="android:padding">6dp</item>
+
+    </style>
+
+    <style name="datepicker" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">#ffff</item>
+        <item name="colorPrimaryDark">#ffff</item>
+        <item name="colorAccent">@color/colorDialogButton</item>
+    </style>
+
+    <!-- tab apperarence-->
+    <style name="CategoryTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">#FFFF</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/opensansregular</item>
+
+    </style>
+
+    <style name="CategoryTab" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">#FFFF</item>
+        <item name="tabSelectedTextColor">#FFFF</item>
+        <item name="tabTextAppearance">@style/CategoryTabTextAppearance</item>
+    </style>
+
+
+    <style name="CodeFontInput" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:textColor">#5c5c5c</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:background">@drawable/rec_find</item>
+        <item name="android:inputType">textCapWords</item>
+
+        <item name="android:typeface">monospace</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="TestSpinnerStyle" parent="android:style/Widget.ListView.DropDown">
+        <item name="android:divider">#ff0000</item>
+        <item name="android:dividerHeight">5dp</item>
+    </style>
+
+    <!-- Style for the category`s divisor-->
+    <style name="DivisorCategoryStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:padding">6dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+
+        <item name="android:background">@android:color/darker_gray</item>
+
+    </style>
+
+    <style name="SampleTheme" parent="@android:style/Theme.Holo.Light">
+        <item name="android:dropDownListViewStyle">@style/TestSpinnerStyle</item>
+    </style>
+
+</resources>
