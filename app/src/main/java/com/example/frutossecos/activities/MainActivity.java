@@ -186,7 +186,10 @@ public class MainActivity extends BaseActivity {
         Fragment f = mAdapter.getItem(position);
 
         if( f instanceof BaseFragment){
+
             button.setImageResource(((BaseFragment)f).getIconButton());
+            button.setColorFilter(this.getResources().getColor(R.color.colorPrimaryDark));
+
         }
 
 

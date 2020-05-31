@@ -52,8 +52,9 @@
                 </LinearLayout>
 
                 <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="22dp"
+                    android:src="@mipmap/options"
+                    android:layout_height="22dp"
                     android:layout_gravity="center_vertical"
                     android:id="@+id/options"
 
@@ -69,7 +70,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_weight="1.9"
-                    android:layout_marginTop="4dp"
                     android:layout_height="wrap_content">
                     <TextView
                         android:layout_width="wrap_content"
@@ -105,7 +105,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/rec_find"
-                    android:backgroundTint="@color/word_clearx3"
+                    android:backgroundTint="@color/colorAccentClear"
                     android:layout_height="wrap_content">
 
                     <TextView
@@ -137,7 +137,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginLeft="5dp"
                     android:background="@drawable/rec_find"
-                    android:backgroundTint="@color/word_clearx3"
+                    android:backgroundTint="@color/colorAccentClear"
                     android:layout_height="wrap_content">
 
                     <TextView
@@ -167,7 +167,7 @@
                     android:layout_weight="1"
                     android:layout_marginLeft="5dp"
                     android:background="@drawable/rec_find"
-                    android:backgroundTint="@color/word_clearx3"
+                    android:backgroundTint="@color/colorAccentClear"
                     android:layout_height="wrap_content">
 
                     <TextView

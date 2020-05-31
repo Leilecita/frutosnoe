@@ -1,23 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#a3d14d</color>
+    <color name="colorPrimary">#688B27</color>
+    <color name="colorPrimaryDark">#4D681D</color>
+    <color name="colorTab">#7AA232</color>
+    <color name="colorAccent">#fae0a3</color>
+
+
+    <!--santi-->
+    <color name="colorAccent1">#fae0a3</color>
+    <color name="colorAccent2">#fae8c2</color>
+    <color name="colorAccentClear">#FCF6EB</color>
+
+    <color name="colorViolet">#f0dfef</color>
+    <color name="colorVioletDark">#e6cde2</color>
+
+
+
+    <!--
+    santi
+     <color name="colorPrimary">#a3d14d</color>
     <color name="colorPrimaryDark">#7fa637</color>
     <color name="colorTab">#94bd48</color>
-    <color name="colorAccent">#fde5a8</color>
-
-
-
-
+    <color name="colorAccent">#fae0a3</color>
     <color name="colorDialogButton"> #7F7359</color>
-    <color name="color_background_cards"> #fde5a8</color>
+
+    -->
+    <color name="colorDialogButton">#CFB171</color>
+    <color name="color_background_cards"> #f6d693</color>
     <color name="edithText">#310d58</color>
 
     <!--
     <color name="word">#142831</color>
+     <color name="word">#252525</color>
     -->
-    <color name="word">#252525</color>
+
+    <color name="word_orig">#252525</color>
+    <color name="word">#28360F</color>
     <color name="word_clear">#807e7e</color>
-    <color name="word_clear_clear">#E2E1E1</color>
+    <color name="word_clear_clear">#BEBDBD</color>
     <color name="word_clearx3">#EDF8ED</color>
 
     <color name="word_info">#968A72</color>
@@ -54,7 +74,7 @@
     <color name="FishyRoseSoft">#e6cbc2</color>
     <color name="FishyBlueSoft">#2e566c</color>
     <color name="white">#ffffff</color>
-    <color name="white_background">#F3F1F1</color>
+    <color name="white_background">#EEF0DF</color>
     <color name="background_dialog">#F8F7F7</color>
     <color name="background">#F0EEEE</color>
 

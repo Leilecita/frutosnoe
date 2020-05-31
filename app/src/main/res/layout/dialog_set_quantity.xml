@@ -217,12 +217,11 @@
                 android:layout_height="40dp"
                 android:background="@drawable/rec_find"
                 android:inputType="numberDecimal"
-                android:paddingLeft="8dp"
+                android:fontFamily="@font/opensanssight"
                 android:hint="unidades"
                 android:textColorHint="@color/word_clear"
                 android:textColor="@color/FishyLetraDark"
                 android:textSize="18sp"
-
                 />
         </LinearLayout>
 

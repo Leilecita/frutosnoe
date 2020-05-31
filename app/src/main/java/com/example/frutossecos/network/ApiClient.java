@@ -43,7 +43,7 @@ public class ApiClient {
         handleRequest( ApiUtils.getAPIService().finishOrder("finish", order_id), callback);
     }
     public void preparedOrder(Long order_id,GenericCallback<Order> callback){
-        handleRequest( ApiUtils.getAPIService().finishOrder("prepared", order_id), callback);
+        handleRequest( ApiUtils.getAPIService().preparedOrder("prepared", order_id), callback);
     }
 
     public void send_account(Long order_id,String state,GenericCallback<Order> callback){
@@ -63,6 +63,9 @@ public class ApiClient {
         handleRequest( ApiUtils.getAPIService().getTotalOrdersPendient("getTotalOrdersPendient"), callback);
     }
 
+    public void getOrdersReportByUserIdByPage(Integer page,Long user_id ,GenericCallback<List<ReportOrder>> callback){
+        handleRequest( ApiUtils.getAPIService().getOrdersReportByUserIdByPage(page,user_id), callback);
+    }
 
 
     public void getOrders(Integer page,String deliver_date,String zone,String time,String query,GenericCallback<List<ReportOrder>> callback){

@@ -4,7 +4,10 @@ public class ApiUtils {
 
     private ApiUtils() {}
 
-    public static final String BASE_URL = "http://192.168.88.7/frutos_secos_server/";
+   // public static final String BASE_URL = "http://192.168.88.7/frutos_secos_server/";
+
+    public static final String BASE_URL = "http://frutos.abarbieri.com.ar/";
+   // public static final String BASE_URL = "http://frutos-dev.abarbieri.com.ar/";
 
     public static APIService getAPIService() {
         return RetrofitClient.getClient(BASE_URL).create(APIService.class);
@@ -17,3 +20,5 @@ public class ApiUtils {
         return BASE_URL + imagePath;
     }
 }
+
+

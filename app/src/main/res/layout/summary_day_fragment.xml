@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         card_view:cardCornerRadius="4dp"
         card_view:cardMaxElevation="4dp"
-        card_view:cardBackgroundColor="#fde5a8"
+        card_view:cardBackgroundColor="@color/color_background_cards"
         card_view:cardElevation="2dp"
         card_view:contentPadding="8dp"
         android:layout_above="@+id/ss"

@@ -8,6 +8,7 @@
     android:layout_height="wrap_content"
     card_view:cardCornerRadius="4dp"
     card_view:cardMaxElevation="4dp"
+    android:backgroundTint="@color/color_background_cards"
     card_view:cardElevation="2dp"
     card_view:contentPadding="4dp"
 
@@ -36,7 +37,7 @@
                 android:layout_gravity="center"
                 android:text="Aristobulo del valle 3020"
                 android:padding="2dp"
-                android:textColor="@color/word"
+                android:textColor="@color/FishyLetraDark"
                 android:textSize="@dimen/general_text" />
 
 
@@ -78,8 +79,8 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text=""
-                android:textColor="@color/word"
+                android:text="Santa teresita"
+                android:textColor="@color/FishyLetraDark"
                 android:textSize="14sp" />
 
             <TextView
@@ -89,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text=""
-                android:textColor="@color/word"
+                android:textColor="@color/FishyLetraDark"
                 android:textSize="14sp" />
 
             <TextView

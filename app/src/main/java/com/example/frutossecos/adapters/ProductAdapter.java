@@ -111,6 +111,8 @@ public class ProductAdapter  extends BaseAdapter<Product,ProductAdapter.ViewHold
 
         holder.stock.setText(getIntegerQuantity(currentProduct.stock));
 
+        holder.options.setColorFilter(mContext.getResources().getColor(R.color.word_clear));
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

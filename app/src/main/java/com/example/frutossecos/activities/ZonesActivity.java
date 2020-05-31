@@ -53,6 +53,8 @@ public class ZonesActivity extends BaseActivity implements Paginate.Callbacks {
         super.onCreate(savedInstanceState);
         showBackArrow();
 
+        setTitle("Zonas");
+
         mRecyclerView = this.findViewById(R.id.list_zones);
         layoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(layoutManager);

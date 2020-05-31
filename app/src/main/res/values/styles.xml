@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
         <item name="actionBarStyle">@style/MyActionBar</item>
         <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
     </style>
@@ -43,6 +43,8 @@
     <style name="datepicker" parent="Theme.AppCompat.Light.Dialog">
         <item name="colorPrimary">#ffff</item>
         <item name="colorPrimaryDark">#ffff</item>
+        <item name="dialogCornerRadius">8dp</item>
+
         <item name="colorAccent">@color/colorDialogButton</item>
     </style>
 

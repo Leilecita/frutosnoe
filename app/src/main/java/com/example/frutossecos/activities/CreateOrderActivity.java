@@ -135,6 +135,8 @@ public class CreateOrderActivity extends BaseActivity implements Paginate.Callba
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
+        setTitle("Nueva orden");
+
         mEdithOrder=false;
         mOrder=null;
         mDeliverDate=null;
@@ -361,7 +363,7 @@ public class CreateOrderActivity extends BaseActivity implements Paginate.Callba
 
     private void createOrder(){
         Long userid= getIntent().getLongExtra("ID",-1);
-        Order order=new Order(userid,"","","borrador","");
+        Order order=new Order(userid,"1999-10-01 00:00:00","","pendiente","");
         // Order order=new Order(userid,"","","pendiente","");
 
         ApiClient.get().postOrder(order, new GenericCallback<Order>() {

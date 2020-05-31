@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -45,7 +46,7 @@ public class CreateUserActivity extends BaseActivity{
 
     private AutoCompleteTextView zone;
 
-    private ImageView mAddNeighborhood;
+    private Button mAddNeighborhood;
 
     private ArrayAdapter<String> adapter;
     private String mNeighborhood;
@@ -60,6 +61,8 @@ public class CreateUserActivity extends BaseActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         showBackArrow();
+
+        setTitle("Nuevo cliente");
 
         mUserName = findViewById(R.id.user_name);
         mUserPhone =  findViewById(R.id.user_phone);
@@ -79,8 +82,7 @@ public class CreateUserActivity extends BaseActivity{
         user.setColorFilter(this.getResources().getColor(R.color.word_clear));
         inst.setColorFilter(this.getResources().getColor(R.color.word_clear));
         face.setColorFilter(this.getResources().getColor(R.color.word_clear));
-        mAddNeighborhood.setColorFilter(this.getResources().getColor(R.color.colorAccent));
-
+      //  mAddNeighborhood.setColorFilter(this.getResources().getColor(R.color.colorAccent));
 
         zone=findViewById(R.id.nei);
         validateNeighbor=false;
@@ -130,8 +132,6 @@ public class CreateUserActivity extends BaseActivity{
         });
 
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

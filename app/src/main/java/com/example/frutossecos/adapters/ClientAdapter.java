@@ -27,6 +27,7 @@ import com.amulyakhare.textdrawable.TextDrawable;
 import com.amulyakhare.textdrawable.util.ColorGenerator;
 import com.example.frutossecos.R;
 import com.example.frutossecos.activities.CreateOrderActivity;
+import com.example.frutossecos.activities.UserHistoryOrdersActivity;
 import com.example.frutossecos.network.ApiClient;
 import com.example.frutossecos.network.Error;
 import com.example.frutossecos.network.GenericCallback;
@@ -35,6 +36,7 @@ import com.example.frutossecos.network.models.Zone;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -44,11 +46,23 @@ public class ClientAdapter extends BaseAdapter<Client,ClientAdapter.ViewHolder> 
     private ArrayAdapter<String> adapter;
     private boolean validateNeigh;
 
+    List<String> listColor=new ArrayList<>();
+    Random random;
+
+
 
     public ClientAdapter(Context context, List<Client> users) {
         setItems(users);
         mContext = context;
         validateNeigh = false;
+
+        listColor.add("#AED581");
+        listColor.add("#E6EE9C");
+        listColor.add("#C5E1A5");
+        listColor.add("#9CCC65");
+        listColor.add("#8BC34A");
+        listColor.add("#558B2F");
+        random=new Random();
 
     }
 
@@ -106,20 +120,25 @@ public class ClientAdapter extends BaseAdapter<Client,ClientAdapter.ViewHolder> 
 
     }
 
+
+
     private Drawable getDrawableFirstLetter(Client user) {
 
         //get first letter of each String item
         String firstLetter = String.valueOf(user.name.charAt(0));
         ColorGenerator generator = ColorGenerator.MATERIAL; // or use DEFAULT
         // generate random color
-        int color = generator.getColor(user);
-        //int color = generator.getRandomColor();
+
+       // int color = generator.getColor(user);
+        String color = listColor.get(random.nextInt(listColor.size()));
+
+
         TextDrawable drawable = TextDrawable.builder()
                 .beginConfig()
                 .width(100)
                 .height(100)
                 .endConfig()
-                .buildRound(firstLetter, color);
+                .buildRound(firstLetter, Color.parseColor(color));
         return drawable;
     }
 
@@ -153,6 +172,9 @@ public class ClientAdapter extends BaseAdapter<Client,ClientAdapter.ViewHolder> 
                 createInfoDialog(currentUser, position);
             }
         });
+
+
+        holder.create.setColorFilter(mContext.getResources().getColor(R.color.word_clear));
         holder.create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -178,7 +200,7 @@ public class ClientAdapter extends BaseAdapter<Client,ClientAdapter.ViewHolder> 
     }
 
     private void startClientHistoryActivity(Client c){
-       // UserHistoryOrders.start(mContext,u);
+        UserHistoryOrdersActivity.start(mContext,c);
     }
 
     private void createInfoDialog(final Client u, final int position){
@@ -222,7 +244,7 @@ public class ClientAdapter extends BaseAdapter<Client,ClientAdapter.ViewHolder> 
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-               // startUserHistoryActivity(u);
+                startClientHistoryActivity(u);
             }
         });
 
@@ -452,4 +474,6 @@ public class ClientAdapter extends BaseAdapter<Client,ClientAdapter.ViewHolder> 
         }
         return listN;
     }
+
+
 }

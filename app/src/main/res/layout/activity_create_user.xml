@@ -56,7 +56,9 @@
                 style="@style/Widget.Design.TextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_weight="1"
+                android:inputType="textCapSentences"
                 android:layout_height="35dp"
+                android:fontFamily="@font/opensanssight"
                 android:background="@drawable/rec_find"
                 android:paddingLeft="8dp"
                 android:textColorHint="@color/word_clear"
@@ -103,9 +105,11 @@
                 style="@style/Widget.Design.TextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_weight="1"
+                android:inputType="number"
                 android:layout_height="35dp"
                 android:background="@drawable/rec_find"
                 android:paddingLeft="8dp"
+                android:fontFamily="@font/opensanssight"
                 android:textColorHint="@color/word_clear"
                 android:textColor="@color/FishyLetraDark"
                 android:textSize="@dimen/general_text"
@@ -151,9 +155,12 @@
                 style="@style/Widget.Design.TextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_weight="1"
+                android:inputType="textCapSentences"
+
                 android:layout_height="35dp"
                 android:background="@drawable/rec_find"
                 android:paddingLeft="8dp"
+                android:fontFamily="@font/opensanssight"
                 android:textColorHint="@color/word_clear"
                 android:textColor="@color/FishyLetraDark"
                 android:textSize="@dimen/general_text"
@@ -201,6 +208,7 @@
                 android:layout_height="35dp"
                 android:background="@drawable/rec_find"
                 android:paddingLeft="8dp"
+                android:fontFamily="@font/opensanssight"
                 android:textColorHint="@color/word_clear"
                 android:textColor="@color/FishyLetraDark"
                 android:textSize="@dimen/general_text"
@@ -247,7 +255,9 @@
                 android:layout_weight="1"
                 android:layout_height="35dp"
                 android:background="@drawable/rec_find"
+                android:inputType="textCapSentences"
                 android:paddingLeft="8dp"
+                android:fontFamily="@font/opensanssight"
                 android:textColorHint="@color/word_clear"
                 android:textColor="@color/FishyLetraDark"
                 android:textSize="@dimen/general_text"
@@ -279,7 +289,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_weight="1.2"
+                    android:layout_weight="1.4"
                     android:layout_height="wrap_content"
                     android:text="Zona "
                     android:textColor="@color/word_clear"
@@ -302,21 +312,40 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:id="@+id/nei"
+                    android:fontFamily="@font/opensanssight"
                     style="@style/CodeFontInput"
                     />
 
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/add_neigh"
-                android:layout_width="25dp"
-                android:layout_height="35dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="4dp"
-
-                android:src="@drawable/add5" />
         </LinearLayout>
 
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_marginTop="12dp"
+            android:paddingRight="4dp"
+            android:gravity="end"
+            android:layout_height="80dp">
+
+            <Button
+                android:layout_width="140dp"
+                android:background="@drawable/rounded_button"
+
+                android:id="@+id/add_neigh"
+                android:layout_height="35dp"
+                android:fontFamily="@font/opensansregular"
+                android:layout_gravity="end"
+                android:text="  Crear zona  "
+                android:textColor="@color/word"
+                android:layout_marginTop="12dp"
+
+                />
+
+
+        </LinearLayout>
 
     </LinearLayout>
 

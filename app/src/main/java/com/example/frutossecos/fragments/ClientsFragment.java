@@ -61,7 +61,7 @@ public class ClientsFragment extends BaseFragment implements Paginate.Callbacks 
     }
 
     public int getIconButton() {
-        return R.mipmap.addperson2;
+        return R.mipmap.persom5;
     }
 
     public int getVisibility() {

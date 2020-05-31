@@ -26,6 +26,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.frutossecos.DateHelper;
 import com.example.frutossecos.Events.EventListUsersState;
 import com.example.frutossecos.Events.EventOrderState;
 import com.example.frutossecos.R;
@@ -224,10 +225,10 @@ public class ReportOrderAdapter extends BaseAdapter<ReportOrder,ReportOrderAdapt
 
         if(r.state.equals("pendiente")){
             holder.stateImage.setImageDrawable(mContext.getResources().getDrawable(R.drawable.pendien_dor_dark));
-            holder.stateImage.setColorFilter(mContext.getResources().getColor(R.color.FishyLetraDark));
+            holder.stateImage.setColorFilter(mContext.getResources().getColor(R.color.colorPrimaryDark));
         }else if (r.state.equals("entregado")){
             holder.stateImage.setImageDrawable(mContext.getResources().getDrawable(R.drawable.done_doble));
-            holder.stateImage.setColorFilter(mContext.getResources().getColor(R.color.verde));
+            holder.stateImage.setColorFilter(mContext.getResources().getColor(R.color.colorPrimaryDark));
         }else{
           //  holder.stateImage.setImageDrawable(mContext.getResources().getDrawable(R.drawable.borrador2));
             //holder.state.setTextColor(mContext.getResources().getColor(R.color.borrador));
@@ -237,11 +238,7 @@ public class ReportOrderAdapter extends BaseAdapter<ReportOrder,ReportOrderAdapt
             holder.horario.setText(r.delivery_time);
         }
 
-
-
         if(!mOnlyAdress){
-
-
 
             if(r.debt_value != null){
                 if (Double.compare(r.debt_value, 0.0) > 0) {
@@ -255,9 +252,11 @@ public class ReportOrderAdapter extends BaseAdapter<ReportOrder,ReportOrderAdapt
 
 
             if(r.prepared.equals("true")){
-                holder.prepared.setColorFilter(mContext.getResources().getColor(R.color.FishyLetraDark));
+                holder.prepared.setImageDrawable(mContext.getResources().getDrawable(R.drawable.prepare));
+                holder.prepared.setColorFilter(mContext.getResources().getColor(R.color.colorPrimaryDark));
             }else{
-                holder.prepared.setColorFilter(mContext.getResources().getColor(R.color.verde));
+                holder.prepared.setImageDrawable(mContext.getResources().getDrawable(R.drawable.topreapre));
+                holder.prepared.setColorFilter(mContext.getResources().getColor(R.color.colorPrimaryDark));
             }
 
             holder.prepared.setOnClickListener(new View.OnClickListener() {
@@ -313,6 +312,7 @@ public class ReportOrderAdapter extends BaseAdapter<ReportOrder,ReportOrderAdapt
                 holder.priority.setText(r.order_obs);
 
             holder.name.setText(r.name);
+            if(r.total_amount != null)
             holder.amount.setText(String.valueOf(round(r.total_amount,2)));
             holder.listItemsOrder.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -350,9 +350,9 @@ public class ReportOrderAdapter extends BaseAdapter<ReportOrder,ReportOrderAdapt
                     }
 
                     if(r.prepared.equals("true")){
-                        menuOpts.getItem(1).setTitle("Preparado");
-                    }else{
                         menuOpts.getItem(1).setTitle("No preparado");
+                    }else{
+                        menuOpts.getItem(1).setTitle("Preparado");
                     }
 
 
@@ -378,7 +378,7 @@ public class ReportOrderAdapter extends BaseAdapter<ReportOrder,ReportOrderAdapt
             });
         }
         if(mHistoryuser){
-            holder.priority.setText(r.delivery_date);
+            holder.priority.setText(DateHelper.get().getOnlyDate(r.delivery_date));
         }
     }
 

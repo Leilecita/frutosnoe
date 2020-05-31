@@ -66,7 +66,6 @@ public class ProductActivity extends BaseActivity implements Paginate.Callbacks{
         mRecyclerView.setLayoutManager(layoutManager);
         mAdapter = new ProductAdapter(this, new ArrayList<Product>());
         mRecyclerView.setAdapter(mAdapter);
-        //registerForContextMenu(mRecyclerView);
 
         FloatingActionButton addProduct= findViewById(R.id.add_product);
         addProduct.setOnClickListener(new View.OnClickListener() {
@@ -98,7 +97,7 @@ public class ProductActivity extends BaseActivity implements Paginate.Callbacks{
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_product_top, menu);
         final MenuItem searchItem = menu.findItem(R.id.action_search);
         searchItem.expandActionView();
         final SearchView searchView = (SearchView) searchItem.getActionView();
