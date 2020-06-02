@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/rec_dialog"
-    android:backgroundTint="@color/white_background"
+    android:backgroundTint="@color/background_dialog"
 
     >
 

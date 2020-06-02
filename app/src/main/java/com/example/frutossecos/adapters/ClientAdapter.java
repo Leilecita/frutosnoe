@@ -151,12 +151,20 @@ public class ClientAdapter extends BaseAdapter<Client,ClientAdapter.ViewHolder> 
         final Client currentUser = getItem(position);
 
         if (currentUser.pendient_orders > 0) {
+            holder.create.setColorFilter(mContext.getResources().getColor(R.color.word_clear));
+            holder.create.setImageResource(R.drawable.prepare);
+
            // holder.create.setBorderWidth(4);
-           // holder.note.setImageResource(R.drawable.prueba3);
+            //holder.note.setImageResource(R.drawable.prueba3);
+            //holder.note.setVisibility(View.VISIBLE);
             //holder.create.setBorderColor(mContext.getResources().getColor(R.color.FishyLetra));
             // holder.create.setImageResource(R.drawable.fishy_santi2);
            // Glide.with(mContext).load(R.drawable.fishy_santi2).into(holder.create);
         } else {
+            holder.create.setColorFilter(mContext.getResources().getColor(R.color.word_clear));
+            holder.create.setImageResource(R.drawable.addnewsan);
+
+          //  holder.note.setVisibility(View.GONE);
             // holder.create.setImageResource(R.drawable.fishy_santi);
           //  Glide.with(mContext).load(R.drawable.fishy_santi).into(holder.create);
         }
@@ -346,7 +354,6 @@ public class ClientAdapter extends BaseAdapter<Client,ClientAdapter.ViewHolder> 
         final AutoCompleteTextView neighborEdith=dialogView.findViewById(R.id.edith_neighborhood);
 
 
-
         phoneEdith.setText(userToEdith.phone);
         addressEdith.setText(userToEdith.address);
         nameEdith.setText(userToEdith.name);
@@ -354,12 +361,12 @@ public class ClientAdapter extends BaseAdapter<Client,ClientAdapter.ViewHolder> 
         inst.setText(userToEdith.instagram);
         face.setText(userToEdith.facebook);
 
-        phoneEdith.setHint("telefono");
-        addressEdith.setHint("direccion");
-        nameEdith.setHint("nombre");
-        inst.setHint("instagram");
-        face.setHint("facebook");
-        neighborEdith.setHint("zona");
+        phoneEdith.setHint("-");
+        addressEdith.setHint("-");
+        nameEdith.setHint("-");
+        inst.setHint("-");
+        face.setHint("-");
+       // neighborEdith.setHint("zona");
 
         listNeighborhoods(neighborEdith);
 

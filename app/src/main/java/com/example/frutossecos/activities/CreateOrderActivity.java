@@ -340,10 +340,14 @@ public class CreateOrderActivity extends BaseActivity implements Paginate.Callba
     //todo borrar todos los pedidos con ordern nro mIdOrder
     private void deleteOrderAndAllItems(){
         if(!mEdithOrder){
+            System.out.println("ORDEN ID"+mOrder.id);
+
             //si se cancela el pedido cuando se CREA la orden , se borra la orden y todos los items.
             //si se estaba editando no es necesario
             final ProgressDialog progress = ProgressDialog.show(this, "Cancelando pedido",
                     "Aguarde un momento", true);
+
+
             ApiClient.get().deleteOrder(mOrder.id, new GenericCallback<Void>() {
                 @Override
                 public void onSuccess(Void data) {
@@ -363,8 +367,9 @@ public class CreateOrderActivity extends BaseActivity implements Paginate.Callba
 
     private void createOrder(){
         Long userid= getIntent().getLongExtra("ID",-1);
-        Order order=new Order(userid,"1999-10-01 00:00:00","","pendiente","");
-        // Order order=new Order(userid,"","","pendiente","");
+
+        //la ponemos en borrador porque el crontab elimina a las 7 am, pero si de casualidad, esa creando a esa hora. se borra la orden!
+        Order order=new Order(userid,"1999-10-01 00:00:00","","borrador","");
 
         ApiClient.get().postOrder(order, new GenericCallback<Order>() {
             @Override

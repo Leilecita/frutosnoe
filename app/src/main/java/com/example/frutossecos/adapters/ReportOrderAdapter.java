@@ -363,7 +363,7 @@ public class ReportOrderAdapter extends BaseAdapter<ReportOrder,ReportOrderAdapt
                                 case R.id.menu_edit:
                                     finishOrder(r,position);
                                     return true;
-                                case R.id.prepared:
+                                case R.id.menu_prepare:
                                     preparedOrder(r,position);
                                     return true;
                                    // downloadPDF(r.order_id,r.name,r.phone);
@@ -406,12 +406,17 @@ public class ReportOrderAdapter extends BaseAdapter<ReportOrder,ReportOrderAdapt
     }
 
     private void preparedOrder(final ReportOrder r, final Integer position){
+        System.out.println("trreee");
 
         ApiClient.get().preparedOrder(r.order_id, new GenericCallback<Order>() {
             @Override
             public void onSuccess(Order data) {
+                System.out.println(data.prepared);
                 r.prepared=data.prepared;
                 updateItem(position,r);
+
+                System.out.println("2223");
+
                 //EventBus.getDefault().post(new EventOrderState(data.id,"finish",r.delivery_date));
                /* if(onOrderFragmentLister!=null){
                     onOrderFragmentLister.refreshPendientOrders();
@@ -420,7 +425,7 @@ public class ReportOrderAdapter extends BaseAdapter<ReportOrder,ReportOrderAdapt
 
             @Override
             public void onError(Error error) {
-
+                System.out.println("acaaaaaaaaaaa");
             }
         });
 

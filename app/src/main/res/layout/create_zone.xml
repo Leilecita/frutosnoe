@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/rec_dialog"
     android:layout_margin="8dp"
-    android:backgroundTint="@color/white_background"
+    android:backgroundTint="@color/background_dialog"
 
     >
 
@@ -43,7 +43,8 @@
                 android:textSize="16sp"
                 android:hint="Nombre"
                 android:background="@drawable/rec_find"
-                android:inputType="textCapWords" />
+                android:inputType="textCapSentences" />
+
         </LinearLayout>
 
         <LinearLayout

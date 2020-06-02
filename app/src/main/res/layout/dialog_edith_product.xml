@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/rec_dialog"
     android:layout_margin="8dp"
-    android:backgroundTint="@color/white_background"
+    android:backgroundTint="@color/background_dialog"
 
     >
 
@@ -35,15 +35,23 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/rec_find"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_weight="2"
+                    android:layout_weight="1.4"
                     android:layout_height="wrap_content"
                     android:text="Nombre "
                     android:padding="4dp"
+                    android:paddingLeft="4dp"
                     android:textSize="@dimen/general_text"
                     android:textColor="@color/word" />
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/line_vertical"
+                    />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -53,7 +61,7 @@
                     android:fontFamily="@font/opensanssight"
                     android:paddingLeft="8dp"
                     android:textSize="16sp"
-                    android:textColor="@color/colorDialogButton"
+                    android:textColor="@color/word"
                     style="@style/Widget.Design.TextInputLayout"
                     android:background="@drawable/rec_find"
                     android:inputType="textCapWords"
@@ -76,17 +84,26 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/rec_find"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_weight="2"
+                    android:layout_weight="1.4"
                     android:layout_height="wrap_content"
                     android:text="$ 1 kg "
+                    android:paddingLeft="4dp"
                     android:padding="4dp"
                     android:textSize="@dimen/general_text"
                     android:textColor="@color/word"
 
+                    />
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/line_vertical"
                     />
 
                 <EditText
@@ -98,7 +115,7 @@
                     style="@style/Widget.Design.TextInputLayout"
                     android:fontFamily="@font/opensanssight"
                     android:paddingLeft="8dp"
-                    android:textColor="@color/colorDialogButton"
+                    android:textColor="@color/word"
                     android:layout_height="35dp"
                     android:textSize="16sp"
                     android:background="@drawable/rec_find"
@@ -116,18 +133,27 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:background="@drawable/rec_find"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_weight="2"
+                    android:layout_weight="1.4"
                     android:layout_height="wrap_content"
                     android:text="$ 1/2 kg"
+                    android:paddingLeft="4dp"
                     android:padding="4dp"
                     android:textSize="@dimen/general_text"
                     android:textColor="@color/word"
 
+                    />
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/line_vertical"
                     />
 
                 <EditText
@@ -138,7 +164,7 @@
                     android:layout_width="match_parent"
                     style="@style/Widget.Design.TextInputLayout"
                     android:paddingLeft="8dp"
-                    android:textColor="@color/colorDialogButton"
+                    android:textColor="@color/word"
                     android:layout_height="35dp"
                     android:fontFamily="@font/opensanssight"
                     android:textSize="16sp"
@@ -158,19 +184,26 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/rec_find"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_weight="2"
+                    android:layout_weight="1.4"
                     android:layout_height="wrap_content"
                     android:text="$ 1/4 kg"
+                    android:paddingLeft="4dp"
                     android:padding="4dp"
                     android:textSize="@dimen/general_text"
                     android:textColor="@color/word"
 
                     />
-
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/line_vertical"
+                    />
                 <EditText
                     android:id="@+id/edit_cuarter_price"
                     android:hint="$"
@@ -179,7 +212,7 @@
                     android:layout_width="match_parent"
                     style="@style/Widget.Design.TextInputLayout"
                     android:paddingLeft="8dp"
-                    android:textColor="@color/colorDialogButton"
+                    android:textColor="@color/word"
                     android:layout_height="35dp"
                     android:fontFamily="@font/opensanssight"
                     android:textSize="16sp"
@@ -200,16 +233,25 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/rec_find"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_weight="2"
+                    android:layout_weight="1.4"
                     android:layout_height="wrap_content"
                     android:text="Stock  "
                     android:padding="4dp"
+                    android:paddingLeft="4dp"
                     android:textSize="@dimen/general_text"
                     android:textColor="@color/word"
+                    />
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/line_vertical"
                     />
 
                 <EditText
@@ -220,7 +262,7 @@
                     style="@style/Widget.Design.TextInputLayout"
                     android:layout_width="match_parent"
 
-                    android:textColor="@color/colorDialogButton"
+                    android:textColor="@color/word"
                     android:textSize="16sp"
                     android:layout_weight="1"
                     android:layout_marginRight="6dp"

@@ -204,18 +204,13 @@ public class ProductAdapter  extends BaseAdapter<Product,ProductAdapter.ViewHold
 
 
         edit_name.setText(p.name);
-        edit_name.setTextColor(mContext.getResources().getColor(R.color.colorDialogButton));
         edit_price.setText(getIntegerQuantity(p.price));
-        edit_price.setTextColor(mContext.getResources().getColor(R.color.colorDialogButton));
 
         edit_wholesaler_price.setText(getIntegerQuantity(p.half_price));
-        edit_wholesaler_price.setTextColor(mContext.getResources().getColor(R.color.colorDialogButton));
 
         edit_cuarter_price.setText(getIntegerQuantity(p.cuarter_price));
-        edit_cuarter_price.setTextColor(mContext.getResources().getColor(R.color.colorDialogButton));
 
         edit_stock.setText(getIntegerQuantity(p.stock));
-        edit_stock.setTextColor(mContext.getResources().getColor(R.color.colorDialogButton));
 
         final AlertDialog dialog = builder.create();
 
@@ -280,7 +275,8 @@ public class ProductAdapter  extends BaseAdapter<Product,ProductAdapter.ViewHold
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
     }
     private String getIntegerQuantity(Double val){
-        String[] arr=String.valueOf(val).split("\\.");
+        return String.valueOf(val);
+       /* String[] arr=String.valueOf(val).split("\\.");
         int[] intArr=new int[2];
         intArr[0]=Integer.parseInt(arr[0]);
         intArr[1]=Integer.parseInt(arr[1]);
@@ -289,7 +285,7 @@ public class ProductAdapter  extends BaseAdapter<Product,ProductAdapter.ViewHold
             return String.valueOf(intArr[0]);
         }else{
             return String.valueOf(val);
-        }
+        }*/
 
     }
 
