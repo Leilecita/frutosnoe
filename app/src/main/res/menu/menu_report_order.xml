@@ -11,6 +11,10 @@
 
         android:title="Preparado"
        />
+    <item android:id="@+id/download"
+
+        android:title="Descargar factura"
+        />
 
 </menu>
 

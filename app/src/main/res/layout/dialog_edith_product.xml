@@ -34,7 +34,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:background="@drawable/rec_find"
                 android:orientation="horizontal">
                 <TextView
@@ -42,10 +42,9 @@
                     android:layout_weight="1.4"
                     android:layout_height="wrap_content"
                     android:text="Nombre "
-                    android:padding="4dp"
-                    android:paddingLeft="4dp"
+                    android:paddingLeft="8dp"
                     android:textSize="@dimen/general_text"
-                    android:textColor="@color/word" />
+                    android:textColor="@color/word_clear" />
                 <TextView
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
@@ -83,7 +82,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:background="@drawable/rec_find"
                 android:orientation="horizontal">
 
@@ -92,10 +91,9 @@
                     android:layout_weight="1.4"
                     android:layout_height="wrap_content"
                     android:text="$ 1 kg "
-                    android:paddingLeft="4dp"
-                    android:padding="4dp"
+                    android:paddingLeft="8dp"
                     android:textSize="@dimen/general_text"
-                    android:textColor="@color/word"
+                    android:textColor="@color/word_clear"
 
                     />
 
@@ -134,7 +132,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:background="@drawable/rec_find"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -142,10 +140,9 @@
                     android:layout_weight="1.4"
                     android:layout_height="wrap_content"
                     android:text="$ 1/2 kg"
-                    android:paddingLeft="4dp"
-                    android:padding="4dp"
+                    android:paddingLeft="8dp"
                     android:textSize="@dimen/general_text"
-                    android:textColor="@color/word"
+                    android:textColor="@color/word_clear"
 
                     />
 
@@ -183,7 +180,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:background="@drawable/rec_find"
                 android:orientation="horizontal">
 
@@ -192,10 +189,9 @@
                     android:layout_weight="1.4"
                     android:layout_height="wrap_content"
                     android:text="$ 1/4 kg"
-                    android:paddingLeft="4dp"
-                    android:padding="4dp"
+                    android:paddingLeft="8dp"
                     android:textSize="@dimen/general_text"
-                    android:textColor="@color/word"
+                    android:textColor="@color/word_clear"
 
                     />
                 <TextView
@@ -232,7 +228,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:background="@drawable/rec_find"
                 android:orientation="horizontal">
 
@@ -241,10 +237,9 @@
                     android:layout_weight="1.4"
                     android:layout_height="wrap_content"
                     android:text="Stock  "
-                    android:padding="4dp"
-                    android:paddingLeft="4dp"
+                    android:paddingLeft="8dp"
                     android:textSize="@dimen/general_text"
-                    android:textColor="@color/word"
+                    android:textColor="@color/word_clear"
                     />
 
                 <TextView

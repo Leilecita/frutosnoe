@@ -11,10 +11,11 @@
         android:id="@+id/list_products"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="40dp"
+        android:layout_marginTop="4dp"
+        android:clipToPadding="false"
+        android:paddingBottom="25dp"
 
         />
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_product"
         android:layout_weight="0"
@@ -26,4 +27,56 @@
         android:layout_alignParentBottom="true"
 
         />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_height="35dp"
+        android:background="@drawable/rec_chip_info"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="16dp"
+        android:paddingLeft="8dp"
+        android:gravity="center_vertical"
+        android:paddingRight="8dp"
+        android:backgroundTint="@color/colorPrimaryDarkTab"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:padding="2dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+
+                android:id="@+id/pendsim"
+                android:src="@drawable/food"
+                android:layout_gravity="center_vertical"
+                />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:layout_marginLeft="4dp"
+                android:id="@+id/cant_products"
+                android:textSize="@dimen/general_text"
+                android:textColor="@color/white"
+                android:text="0"
+
+                />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
 </RelativeLayout>
+<!--
+
+
+
+-->

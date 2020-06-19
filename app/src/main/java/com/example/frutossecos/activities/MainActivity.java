@@ -130,6 +130,9 @@ public class MainActivity extends BaseActivity {
             case R.id.action_products:
                 startProductsActivity();
                 return true;
+            case R.id.action_all_orders:
+                startAllOrdersActivity();
+                return true;
 
             case android.R.id.home:
                 NavUtils.navigateUpFromSameTask(this);
@@ -140,6 +143,9 @@ public class MainActivity extends BaseActivity {
 
     private void startProductsActivity(){
         startActivity(new Intent(MainActivity.this, ProductActivity.class));
+    }
+    private void startAllOrdersActivity(){
+        startActivity(new Intent(MainActivity.this, ListOrdersActivity.class));
     }
 
     private void startStatisticActivity(){

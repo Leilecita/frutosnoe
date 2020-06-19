@@ -27,34 +27,37 @@
         android:id="@+id/list_users"
         android:layout_below="@+id/line1"
         android:layout_width="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="25dp"
         android:layout_height="match_parent"
-        android:layout_marginBottom="50dp"
         />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="18dp"
-        android:background="@drawable/rec_find"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp"
-
-        android:layout_marginBottom="10dp"
+        android:layout_height="35dp"
+        android:background="@drawable/rec_chip_info"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="16dp"
+        android:paddingLeft="8dp"
+        android:gravity="center_vertical"
+        android:paddingRight="8dp"
+        android:backgroundTint="@color/colorPrimaryDarkTab"
         android:orientation="horizontal">
+
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:padding="2dp"
             android:layout_height="wrap_content">
 
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:id="@+id/pendim"
                 android:src="@drawable/pendient_dor"
                 android:layout_gravity="center_vertical"
                 />
-
-
 
             <TextView
                 android:layout_width="wrap_content"
@@ -63,7 +66,7 @@
                 android:layout_marginLeft="4dp"
                 android:id="@+id/pendients"
                 android:textSize="18sp"
-                android:textColor="@color/word"
+                android:textColor="@color/white"
                 android:text="0"
 
                 />

@@ -3,6 +3,7 @@ package com.example.frutossecos.network;
 
 import android.util.Log;
 
+import com.example.frutossecos.network.models.AmountProducts;
 import com.example.frutossecos.network.models.AmountResult;
 import com.example.frutossecos.network.models.Client;
 import com.example.frutossecos.network.models.ItemOrder;
@@ -67,7 +68,9 @@ public class ApiClient {
         handleRequest( ApiUtils.getAPIService().getOrdersReportByUserIdByPage(page,user_id), callback);
     }
 
-
+    public void getAllOrdersByPage(Integer page,GenericCallback<List<ReportOrder>> callback){
+        handleRequest( ApiUtils.getAPIService().getAllOrdersByPage("listAllOrders",page), callback);
+    }
     public void getOrders(Integer page,String deliver_date,String zone,String time,String query,GenericCallback<List<ReportOrder>> callback){
         handleRequest( ApiUtils.getAPIService().getOrders("listAndSearchOrders",page, deliver_date,zone,time,query), callback);
     }
@@ -124,6 +127,10 @@ public class ApiClient {
 
     public void getAliveProductsByPage(Integer page,String state,String query,final GenericCallback<List<Product>> callback){
         handleRequest( ApiUtils.getAPIService().getAliveProductsByPage(page,state,query), callback);
+    }
+
+    public void getTotProducts(final GenericCallback<AmountProducts> callback){
+        handleRequest( ApiUtils.getAPIService().getTotProducts("getTotProducts"), callback);
     }
 
     public void getProduct(Long id,final GenericCallback<Product> callback){

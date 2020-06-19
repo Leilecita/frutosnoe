@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -24,6 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.frutossecos.CurrentValuesHelper;
 import com.example.frutossecos.CustomLoadingListItemCreator;
+import com.example.frutossecos.DateHelper;
 import com.example.frutossecos.R;
 import com.example.frutossecos.SimpleItemTouchHelperCallback;
 import com.example.frutossecos.adapters.ReportOrderAdapter;
@@ -46,7 +48,7 @@ import java.util.UUID;
 
 import pub.devrel.easypermissions.EasyPermissions;
 
-public class OrdersFragment extends BaseFragment implements Paginate.Callbacks, OnStartDragListener,  OrderFragmentListener {
+public class OrdersFragment extends BaseFragment implements Paginate.Callbacks, OnStartDragListener,EasyPermissions.PermissionCallbacks,  OrderFragmentListener {
 
 
     //EasyPermissions.PermissionCallbacks,
@@ -70,6 +72,8 @@ public class OrdersFragment extends BaseFragment implements Paginate.Callbacks, 
 
     TextView pendients_order;
     TextView sends_order;
+    ImageView sends;
+    ImageView pends;
 
     // private boolean mOnlyaddress;
 
@@ -126,7 +130,10 @@ public class OrdersFragment extends BaseFragment implements Paginate.Callbacks, 
         final Spinner spinnerTime = mRootView.findViewById(R.id.spinner_time);
         pendients_order = mRootView.findViewById(R.id.pendients);
         sends_order = mRootView.findViewById(R.id.sends);
-
+        sends = mRootView.findViewById(R.id.sendsim);
+        pends = mRootView.findViewById(R.id.pendsim);
+        sends.setColorFilter(this.getResources().getColor(R.color.white));
+        pends.setColorFilter(this.getResources().getColor(R.color.white));
 
         registerForContextMenu(mRecyclerView);
         setHasOptionsMenu(true);
@@ -357,7 +364,7 @@ public class OrdersFragment extends BaseFragment implements Paginate.Callbacks, 
     @Override
     public void onResume() {
         super.onResume();
-       // checkPermissions();
+        checkPermissions();
         boolean onlyAddress=mAdapter.getOnlyAddress();
         System.out.println("OnResume");
         if(!isLoading()) {
@@ -415,7 +422,7 @@ public class OrdersFragment extends BaseFragment implements Paginate.Callbacks, 
 
     private void loadTextDate(){
         if(CurrentValuesHelper.get().getLastDate()!=null){
-            mDeliver_date.setText(CurrentValuesHelper.get().getLastDate());
+            mDeliver_date.setText(DateHelper.get().getOnlyDate(CurrentValuesHelper.get().getLastDate()));
         }else{
             mDeliver_date.setText(mDeliver_date.getText().toString());
         }
@@ -459,7 +466,7 @@ public class OrdersFragment extends BaseFragment implements Paginate.Callbacks, 
     public boolean hasLoadedAllItems() {
         return !hasMoreItems;
     }
-/*
+
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -488,5 +495,5 @@ public class OrdersFragment extends BaseFragment implements Paginate.Callbacks, 
     public void onPermissionsDenied(int requestCode, @NonNull List<String> perms) {
         Log.d("PERMS", "onPermissionsDenied:" + requestCode + ":" + perms.size());
     }
-*/
+
 }

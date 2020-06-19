@@ -73,7 +73,7 @@ public class ItemSummaryAdapter extends  BaseAdapter<SummaryDay,ItemSummaryAdapt
         clearViewHolder(holder);
 
         final SummaryDay item= getItem(position);
-        holder.cant.setText(ValuesHelper.get().getIntegerQuantity(round(item.totalQuantity,2)));
+        holder.cant.setText(ValuesHelper.get().getIntegerQuantityRounded(item.totalQuantity));
         if(item.typePrice.equals(Constants.TYPE_PRICE_KG)){
             holder.type.setText("1");
         }else if(item.typePrice.equals(Constants.TYPE_PRICE_MED_KG)){

@@ -72,7 +72,7 @@ public class ItemOrderAdapter  extends BaseAdapter<ItemOrder,ItemOrderAdapter.Vi
     @Override
     public ItemOrderAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         // Create a new View
-        View v = LayoutInflater.from(mContext).inflate(R.layout.item_order,parent,false);
+        View v = LayoutInflater.from(mContext).inflate(R.layout.item_order_new,parent,false);
         ViewHolder vh = new ViewHolder(v);
 
         return vh;
@@ -122,7 +122,7 @@ public class ItemOrderAdapter  extends BaseAdapter<ItemOrder,ItemOrderAdapter.Vi
 
         Double cant=currentItem.quantity;
 
-        holder.cant.setText(ValuesHelper.get().getIntegerQuantity(cant));
+        holder.cant.setText(ValuesHelper.get().getIntegerQuantityRounded(cant));
 
         if(currentItem.price_type.equals(Constants.TYPE_PRICE_KG)){
             holder.price.setTextColor(mContext.getResources().getColor(R.color.FishyLetraDark));
@@ -131,13 +131,13 @@ public class ItemOrderAdapter  extends BaseAdapter<ItemOrder,ItemOrderAdapter.Vi
             holder.price.setTextColor(mContext.getResources().getColor(R.color.FishyLetraDark));
         }
 
-        String text="("+ ValuesHelper.get().getIntegerQuantity(round(currentItem.price,2))+")";
+        String text= ValuesHelper.get().getIntegerQuantityRounded(currentItem.price);
 
         holder.price.setText(text);
 
         Double total=cant*currentItem.price;
 
-        holder.total_price.setText("$"+ValuesHelper.get().getIntegerQuantity(roundTwoDecimals(total)));
+        holder.total_price.setText("$"+round(total,2));
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -54,6 +55,7 @@ public class ClientsFragment extends BaseFragment implements Paginate.Callbacks 
 
     private LinearLayout lineDebt;
     private TextView totalDebt;
+    private ImageView pendim;
 
 
     public void onClickButton() {
@@ -99,6 +101,8 @@ public class ClientsFragment extends BaseFragment implements Paginate.Callbacks 
         pendients = mRootView.findViewById(R.id.pendients);
         lineDebt = mRootView.findViewById(R.id.line_debt);
         totalDebt = mRootView.findViewById(R.id.total_debt);
+        pendim = mRootView.findViewById(R.id.pendim);
+        pendim.setColorFilter(this.getResources().getColor(R.color.white));
 
 
         final SearchView searchView = mRootView.findViewById(R.id.searchView);
@@ -298,6 +302,7 @@ public class ClientsFragment extends BaseFragment implements Paginate.Callbacks 
     public void onEvent(EventListUsersState event){
         clearview();
         listUsers(mQuery);
+        loadCantOrdersPendient();
     }
 
 

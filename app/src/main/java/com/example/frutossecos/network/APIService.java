@@ -2,6 +2,7 @@ package com.example.frutossecos.network;
 
 
 
+import com.example.frutossecos.network.models.AmountProducts;
 import com.example.frutossecos.network.models.AmountResult;
 import com.example.frutossecos.network.models.Client;
 import com.example.frutossecos.network.models.ItemOrder;
@@ -35,6 +36,9 @@ public interface APIService {
 
     @GET("orders.php")
     Observable<Response<List<ReportOrder>>>  getOrdersReportByUserIdByPage(@Query("page") Integer page, @Query("client_id") Long user_id);
+
+    @GET("orders.php")
+    Observable<Response<List<ReportOrder>>>  getAllOrdersByPage(@Query("method") String method,@Query("page") Integer page);
 
 
     @GET("orders.php")
@@ -106,6 +110,9 @@ public interface APIService {
 
     @GET("products.php")
     Observable<Response<List<Product>>> getAliveProductsByPage( @Query("page") Integer page, @Query("state") String state, @Query("query") String query);
+
+    @GET("products.php")
+    Observable<Response<AmountProducts>> getTotProducts(@Query("method") String method);
 
 
     @GET("products.php")

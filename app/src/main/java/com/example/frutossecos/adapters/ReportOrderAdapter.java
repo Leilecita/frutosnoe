@@ -27,6 +27,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.frutossecos.DateHelper;
+import com.example.frutossecos.DownloadTask;
 import com.example.frutossecos.Events.EventListUsersState;
 import com.example.frutossecos.Events.EventOrderState;
 import com.example.frutossecos.R;
@@ -36,6 +37,7 @@ import com.example.frutossecos.interfaces.ItemTouchHelperViewHolder;
 import com.example.frutossecos.interfaces.OnStartDragListener;
 import com.example.frutossecos.interfaces.OrderFragmentListener;
 import com.example.frutossecos.network.ApiClient;
+import com.example.frutossecos.network.ApiUtils;
 import com.example.frutossecos.network.Error;
 import com.example.frutossecos.network.GenericCallback;
 import com.example.frutossecos.network.models.Order;
@@ -211,6 +213,10 @@ public class ReportOrderAdapter extends BaseAdapter<ReportOrder,ReportOrderAdapt
                 vh.amount.setText(null);
             if(vh.name!=null)
                 vh.name.setText(null);
+            if(vh.horario!=null)
+                vh.horario.setText(null);
+            if(vh.state!=null)
+                vh.state.setText(null);
 
         }
     }
@@ -230,8 +236,7 @@ public class ReportOrderAdapter extends BaseAdapter<ReportOrder,ReportOrderAdapt
             holder.stateImage.setImageDrawable(mContext.getResources().getDrawable(R.drawable.done_doble));
             holder.stateImage.setColorFilter(mContext.getResources().getColor(R.color.colorPrimaryDark));
         }else{
-          //  holder.stateImage.setImageDrawable(mContext.getResources().getDrawable(R.drawable.borrador2));
-            //holder.state.setTextColor(mContext.getResources().getColor(R.color.borrador));
+
         }
 
         if(!r.delivery_time.equals("Horario")){
@@ -366,8 +371,11 @@ public class ReportOrderAdapter extends BaseAdapter<ReportOrder,ReportOrderAdapt
                                 case R.id.menu_prepare:
                                     preparedOrder(r,position);
                                     return true;
-                                   // downloadPDF(r.order_id,r.name,r.phone);
-                                 //   return true;
+                                case R.id.download:
+
+
+                                    downloadPDF(r.order_id,r.name,r.phone);
+                                    return true;
                                 default:
                                     return false;
                             }
@@ -391,6 +399,9 @@ public class ReportOrderAdapter extends BaseAdapter<ReportOrder,ReportOrderAdapt
             public void onSuccess(Order data) {
                 r.state=data.state;
                 updateItem(position,r);
+
+                EventBus.getDefault().post(new EventListUsersState());
+
                 EventBus.getDefault().post(new EventOrderState(data.id,"finish",r.delivery_date));
 
                 if(onOrderFragmentLister!=null){
@@ -406,7 +417,6 @@ public class ReportOrderAdapter extends BaseAdapter<ReportOrder,ReportOrderAdapt
     }
 
     private void preparedOrder(final ReportOrder r, final Integer position){
-        System.out.println("trreee");
 
         ApiClient.get().preparedOrder(r.order_id, new GenericCallback<Order>() {
             @Override
@@ -415,7 +425,6 @@ public class ReportOrderAdapter extends BaseAdapter<ReportOrder,ReportOrderAdapt
                 r.prepared=data.prepared;
                 updateItem(position,r);
 
-                System.out.println("2223");
 
                 //EventBus.getDefault().post(new EventOrderState(data.id,"finish",r.delivery_date));
                /* if(onOrderFragmentLister!=null){
@@ -460,7 +469,9 @@ public class ReportOrderAdapter extends BaseAdapter<ReportOrder,ReportOrderAdapt
                         if(onOrderFragmentLister!=null){
                             onOrderFragmentLister.refreshPendientOrders();
                         }
+
                         EventBus.getDefault().post(new EventOrderState(r.client_id,"deleted",r.delivery_date));
+
                     }
                     @Override
                     public void onError(Error error) {
@@ -600,7 +611,7 @@ public class ReportOrderAdapter extends BaseAdapter<ReportOrder,ReportOrderAdapt
     }
 
 
-   /* public void downloadPDF(Long orderId,String name,String phone)
+    public void downloadPDF(Long orderId,String name,String phone)
     {
         // String URL= "http://192.168.0.14/fishyserver/orders.php?method=generatePdf";
         String URL= ApiUtils.BASE_URL + "orders.php?method=generatePdf&order_id="+orderId;
@@ -609,7 +620,7 @@ public class ReportOrderAdapter extends BaseAdapter<ReportOrder,ReportOrderAdapt
         new DownloadTask(mContext, URL,"Order-"+name+".pdf",phone);
 
     }
-*/
+
 
     public String changeFormatDate(String date){
         try {

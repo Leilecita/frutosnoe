@@ -26,6 +26,7 @@ import com.example.frutossecos.adapters.ProductAdapter;
 import com.example.frutossecos.network.ApiClient;
 import com.example.frutossecos.network.Error;
 import com.example.frutossecos.network.GenericCallback;
+import com.example.frutossecos.network.models.AmountProducts;
 import com.example.frutossecos.network.models.Product;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.paginate.Paginate;
@@ -45,6 +46,7 @@ public class ProductActivity extends BaseActivity implements Paginate.Callbacks{
     private RecyclerView mRecyclerView;
     private ProductAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    private TextView cantProducts;
 
     //pagination
     private boolean loadingInProgress;
@@ -67,6 +69,8 @@ public class ProductActivity extends BaseActivity implements Paginate.Callbacks{
         mAdapter = new ProductAdapter(this, new ArrayList<Product>());
         mRecyclerView.setAdapter(mAdapter);
 
+        cantProducts= findViewById(R.id.cant_products);
+
         FloatingActionButton addProduct= findViewById(R.id.add_product);
         addProduct.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,10 +84,24 @@ public class ProductActivity extends BaseActivity implements Paginate.Callbacks{
         hasMoreItems = true;
 
         registerForContextMenu(mRecyclerView);
+        getTotProducts();
         implementsPaginate();
 
     }
 
+    private void getTotProducts(){
+        ApiClient.get().getTotProducts(new GenericCallback<AmountProducts>() {
+            @Override
+            public void onSuccess(AmountProducts data) {
+                cantProducts.setText(String.valueOf(data.total));
+            }
+
+            @Override
+            public void onError(Error error) {
+
+            }
+        });
+    }
     private void clearview(){
         mCurrentPage = 0;
         mAdapter.clear();
@@ -93,6 +111,7 @@ public class ProductActivity extends BaseActivity implements Paginate.Callbacks{
     private void clearAndList(){
         clearview();
         listProducts(mQuery);
+        getTotProducts();
 
     }
     @Override
@@ -165,7 +184,7 @@ public class ProductActivity extends BaseActivity implements Paginate.Callbacks{
                 String stockProduct=stock.getText().toString().trim();
                 String nameProduct=name.getText().toString().trim();
 
-                if(!priceProduct.matches("") && !stockProduct.matches("") && !nameProduct.matches("") && !halfprice.matches("")){
+                if(!priceProduct.matches("") && !stockProduct.matches("") && !nameProduct.matches("") && !halfprice.matches("") && !cuarterprice.matches("")){
 
                     Product newProduct= new Product(nameProduct,Double.valueOf(priceProduct),Double.valueOf(halfprice),Double.valueOf(cuarterprice),Double.valueOf(stockProduct));
                     ApiClient.get().postProduct(newProduct, new GenericCallback<Product>() {

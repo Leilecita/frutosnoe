@@ -6,6 +6,10 @@
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/logo_noe3"
@@ -14,6 +18,19 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
+
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths">
+
+            </meta-data>
+        </provider>
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name"
@@ -42,6 +59,10 @@
             />
         <activity
             android:name=".activities.UserHistoryOrdersActivity"
+            android:parentActivityName=".activities.MainActivity"
+            />
+        <activity
+            android:name=".activities.ListOrdersActivity"
             android:parentActivityName=".activities.MainActivity"
             />
     </application>

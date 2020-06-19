@@ -35,6 +35,7 @@ public class ReportItemOrderAdapter extends BaseAdapter<ReportItemOrder,ReportIt
         public TextView type;
         public TextView cant;
         public TextView amount;
+        public TextView price;
 
         public ViewHolder(View v){
             super(v);
@@ -42,6 +43,7 @@ public class ReportItemOrderAdapter extends BaseAdapter<ReportItemOrder,ReportIt
             cant= v.findViewById(R.id.cant);
             type= v.findViewById(R.id.type);
             amount= v.findViewById(R.id.total_amount);
+            price= v.findViewById(R.id.price);
         }
     }
 
@@ -63,6 +65,8 @@ public class ReportItemOrderAdapter extends BaseAdapter<ReportItemOrder,ReportIt
             vh.amount.setText(null);
         if(vh.type!=null)
             vh.type.setText(null);
+        if(vh.price!=null)
+            vh.price.setText(null);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
@@ -73,21 +77,18 @@ public class ReportItemOrderAdapter extends BaseAdapter<ReportItemOrder,ReportIt
         final ReportItemOrder currentItem=getItem(position);
 
         holder.name.setText(currentItem.name);
-        holder.cant.setText(ValuesHelper.get().getIntegerQuantity(currentItem.quantity));
+        holder.cant.setText(ValuesHelper.get().getIntegerQuantityRounded(currentItem.quantity));
+        holder.price.setText(ValuesHelper.get().getIntegerQuantityRounded(currentItem.price));
 
         if(currentItem.price_type.equals(Constants.TYPE_PRICE_MED_KG)){
-            holder.type.setText("(1/2kg)");
+            holder.type.setText("1/2kg");
         }else if(currentItem.price_type.equals(Constants.TYPE_PRICE_CUARTER_KG)){
-            holder.type.setText("(1/4kg)");
+            holder.type.setText("1/4kg");
         }else{
-            holder.type.setText("(1kg)");
+            holder.type.setText("1kg");
         }
 
-       /* if(currentItem.price_type.equals(Constants.TYPE_PRICE_MAYORISTA)){
-            holder.amount.setTextColor(mContext.getResources().getColor(R.color.FishyRose3));
-        }else if(currentItem.price_type.equals(Constants.TYPE_PRICE_MINORISTA)){
-            holder.amount.setTextColor(mContext.getResources().getColor(R.color.FishyLetraDark));
-        }*/
+
 
         holder.amount.setText(String.valueOf(round(currentItem.price*currentItem.quantity,2)));
     }
