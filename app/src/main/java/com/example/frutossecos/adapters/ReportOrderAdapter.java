@@ -264,18 +264,6 @@ public class ReportOrderAdapter extends BaseAdapter<ReportOrder,ReportOrderAdapt
                 holder.prepared.setColorFilter(mContext.getResources().getColor(R.color.colorPrimaryDark));
             }
 
-            holder.prepared.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //showDialogFactura(r,position);
-                }
-            });
-
-           /* if(r.send_account.equals("true")){
-                holder.factura.setImageDrawable(mContext.getResources().getDrawable(R.drawable.factura));
-            }else{
-                holder.factura.setImageDrawable(mContext.getResources().getDrawable(R.drawable.factura_dor));
-            }*/
 
             if(r.defaulter.equals("true")){
                 holder.money.setImageDrawable(mContext.getResources().getDrawable(R.drawable.money_roj));
@@ -300,6 +288,11 @@ public class ReportOrderAdapter extends BaseAdapter<ReportOrder,ReportOrderAdapt
         }
 
         if(mOnlyAdress){
+
+            holder.name.setText(r.name);
+            if(r.total_amount != null)
+                holder.amount.setText(String.valueOf(round(r.total_amount,2)));
+
             holder.neighborhood.setText(r.zone);
             holder.time.setText(r.order_obs);
             holder.priority.setText(String.valueOf(r.priority));

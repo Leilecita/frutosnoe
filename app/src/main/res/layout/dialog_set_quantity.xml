@@ -217,6 +217,7 @@
                 android:layout_height="40dp"
                 android:background="@drawable/rec_find"
                 android:inputType="numberDecimal"
+                android:text="1"
                 android:fontFamily="@font/opensanssight"
                 android:hint="unidades"
                 android:textColorHint="@color/word_clear"

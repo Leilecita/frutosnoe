@@ -237,7 +237,7 @@ public class ProductAdapter  extends BaseAdapter<Product,ProductAdapter.ViewHold
                 }
 
                 if(!productCuarterPrice.matches("")) {
-                    p.cuarter_price=Double.valueOf(productWholesalerPrice);
+                    p.cuarter_price=Double.valueOf(productCuarterPrice);
                 }
 
                 if(!productStock.matches("")) {
